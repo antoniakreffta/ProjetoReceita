@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "767727338559",
+    "project_id": "projetoreceita-fa472",
+    "storage_bucket": "projetoreceita-fa472.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767727338559:android:15be9504692882f6a9648a",
+        "android_client_info": {
+          "package_name": "com.example.projetoreceita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767727338559-lakm5oirpqa12qj6p283ju3rolm2pu35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMhYSCM-OkoqQTCoKoHM0sqgjA-WqjF0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767727338559-lakm5oirpqa12qj6p283ju3rolm2pu35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
