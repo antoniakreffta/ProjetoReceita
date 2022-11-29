@@ -9,6 +9,6 @@
             android:text="Favorites"
             android:gravity="center"
             android:fontFamily="@font/alata"
-            android:textSize="150dp"/>
+            android:textSize="34sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
