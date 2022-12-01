@@ -1,37 +1,36 @@
 package com.example.projetoreceita;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.projetoreceita.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton home_button, favorites_button;
+    private ActivityMainBinding binding;
+
+    private NavHostFragment navHostFragment;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        home_button = findViewById(R.id.home);
-        favorites_button = findViewById(R.id.favorites);
+        initNavigation();
 
-        favorites_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Favorites.class));
-            }
-        });
     }
 
-    public void logout (View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), Login.class));
-        finish();
+    private void initNavigation() {
+        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        navController = navHostFragment.getNavController();
+        NavigationUI.setupWithNavController(binding.bottomNavigation, navController);
     }
+
+
 }
