@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">ProjetoReceita</string>
 
+    //api key
+    <string name="api_key">48280825911640a3a20672ab682be72e</string>
+
     <string name="menu_home">Home</string>
     <string name="favorites_home">Favorites</string>
     <!-- TODO: Remove or change this placeholder text -->

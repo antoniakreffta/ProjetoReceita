@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
+import com.example.projetoreceita.Adapters.RandomRecipeAdapter;
 import com.example.projetoreceita.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
