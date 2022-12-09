@@ -42,14 +42,15 @@ public class HomeFragment extends Fragment {
         dialog.show();
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
     }
 
     private final RandomRecipeResponseListener randomRecipeResponseListener = new RandomRecipeResponseListener() {
         @Override
         public void didFetch(RandomRecipeApiResponse response, String message) {
             dialog.dismiss();
-            recyclerView = recyclerView.findViewById(R.id.recycler_view);
+            recyclerView = getView().findViewById(R.id.recycler_view);
             GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setHasFixedSize(true);
