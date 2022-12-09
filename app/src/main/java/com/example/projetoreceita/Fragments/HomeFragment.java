@@ -2,6 +2,7 @@ package com.example.projetoreceita.Fragments;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,8 +16,10 @@ import android.widget.Toast;
 
 import com.example.projetoreceita.Adapters.RandomRecipeAdapter;
 import com.example.projetoreceita.Listeners.RandomRecipeResponseListener;
+import com.example.projetoreceita.Listeners.RecipeClickListener;
 import com.example.projetoreceita.Models.RandomRecipeApiResponse;
 import com.example.projetoreceita.R;
+import com.example.projetoreceita.RecipeDetailsActivity;
 import com.example.projetoreceita.RequestManager;
 
 public class HomeFragment extends Fragment {
@@ -54,13 +57,21 @@ public class HomeFragment extends Fragment {
             GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 1);
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setHasFixedSize(true);
-            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes);
+            randomRecipeAdapter = new RandomRecipeAdapter(getActivity(), response.recipes, recipeClickListener);
             recyclerView.setAdapter(randomRecipeAdapter);
         }
 
         @Override
         public void didError(String message) {
             Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private final RecipeClickListener recipeClickListener = new RecipeClickListener() {
+        @Override
+        public void onRecipeClicked(String id) {
+            startActivity(new Intent(getActivity(), RecipeDetailsActivity.class)
+                    .putExtra("id", id));
         }
     };
 
